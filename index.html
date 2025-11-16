@@ -1,1 +1,738 @@
-<!-- removed: file intentionally deleted on 2025-11-16 by Windforce2026 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ARCHIVE — Premium Architecture & Interior Design</title>
+<meta name="description" content="ARCHIVE — premium architecture & interior design studio. Large masonry services, galleries, and turnkey projects.">
+<meta name="theme-color" content="#0A7E23">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<style>
+  :root{
+    --green: #0A7E23;
+    --orange: #FF7A00;
+    --bg: #FFF9F0;
+    --card: #FFFFFF;
+    --muted:#6b6b6b;
+    --accent-grad: linear-gradient(135deg,var(--orange),var(--green));
+    --glass: rgba(255,255,255,0.85);
+    --max: 1200px;
+    --radius: 12px;
+    --shadow: 0 18px 40px rgba(11,20,15,0.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:#222;-webkit-font-smoothing:antialiased;line-height:1.45}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%;height:auto;border-radius:10px}
+  .container{width:clamp(320px,92%,var(--max));margin:0 auto}
+
+  /* Skip link */
+  .skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+  .skip:focus{position:static;width:auto;height:auto;padding:8px 12px;background:#fff;border-radius:6px;left:16px;top:16px;z-index:9999;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+
+  /* HEADER */
+  header{position:sticky;top:0;z-index:120;background:rgba(255,255,255,0.82);backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(10,10,10,0.04)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 4%}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .logo{font-weight:800;color:var(--green);letter-spacing:1px;font-size:18px}
+  .brand small{color:var(--muted);font-size:12px}
+  nav.main ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
+  nav.main a{padding:8px 12px;border-radius:8px;font-weight:600;color:#222}
+  nav.main a:hover, nav.main a:focus{background:rgba(10,10,10,0.04);outline:none}
+  .cta{background:var(--accent-grad);background-size:200% 200%;color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;box-shadow:0 8px 24px rgba(15,90,34,0.08)}
+
+  /* MOBILE NAV */
+  .menu-toggle{display:none;background:none;border:0;padding:8px;border-radius:8px;cursor:pointer}
+  .mobile-nav{display:none;background:var(--card);position:fixed;inset:60px 12px auto 12px;border-radius:10px;box-shadow:0 20px 60px rgba(11,20,15,0.12);padding:12px;z-index:140}
+  .mobile-nav a{display:block;padding:10px;border-radius:8px}
+  .overlay-nav{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.36);z-index:130}
+
+  /* HERO */
+  .hero{min-height:68vh;display:grid;place-items:center;text-align:center;padding:72px 4% 40px;background:
+    linear-gradient(180deg, rgba(10,126,35,0.06), rgba(255,122,0,0.03)),
+    url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;border-bottom:1px solid rgba(10,126,35,0.04)}
+  .hero .inner{max-width:980px;background:var(--glass);padding:36px;border-radius:14px;box-shadow:0 20px 60px rgba(11,20,15,0.06)}
+  .hero h1{font-size:clamp(26px,4vw,42px);margin:0 0 10px;color:#082b13}
+  .hero p{color:var(--muted);margin-bottom:16px}
+  .hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  /* SECTIONS */
+  section{padding:56px 4%}
+  .section-header{max-width:var(--max);margin:0 auto 28px;text-align:center}
+  .section-header h2{font-size:28px;color:var(--green);margin-bottom:8px}
+  .section-header p{color:var(--muted);max-width:820px;margin:0 auto}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 420px;gap:34px;align-items:center;max-width:var(--max);margin:0 auto}
+  @media(max-width:980px){.about-grid{grid-template-columns:1fr;}}
+  .about-card{background:var(--card);padding:26px;border-radius:12px;box-shadow:var(--shadow)}
+
+  /* MASONRY SERVICES */
+  .masonry{column-count:3;column-gap:20px;max-width:var(--max);margin:0 auto}
+  @media(max-width:1100px){.masonry{column-count:2}}
+  @media(max-width:700px){.masonry{column-count:1}}
+  .service-card{
+    display:inline-block;width:100%;margin:0 0 18px;border-radius:12px;background:var(--card);overflow:hidden;box-shadow:0 12px 40px rgba(11,20,15,0.06);
+    transition:transform .28s ease, box-shadow .28s ease;border-left:8px solid var(--orange)
+  }
+  .service-card:hover{transform:translateY(-8px);box-shadow:0 30px 70px rgba(11,20,15,0.12)}
+  .service-card .meta{padding:14px 16px}
+  .service-card h3{color:var(--green);margin:0 0 6px;font-size:18px}
+  .service-card p{color:var(--muted);margin:0;font-size:14px}
+  .service-image{width:100%;height:260px;object-fit:cover}
+
+  /* PORTFOLIO / PROJECTS */
+  .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:var(--max);margin:0 auto}
+  @media(max-width:900px){.portfolio-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.portfolio-grid{grid-template-columns:1fr}}
+
+  /* TESTIMONIALS */
+  .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:var(--max);margin:0 auto}
+  @media(max-width:900px){.testimonials{grid-template-columns:repeat(1,1fr)}}
+
+  /* TEAM */
+  .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;max-width:var(--max);margin:0 auto}
+
+  /* PROCESS */
+  .process{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;max-width:var(--max);margin:0 auto}
+
+  /* FAQ */
+  .faq .item{background:#fff;padding:14px;border-radius:10px;margin-bottom:10px;box-shadow:0 8px 30px rgba(0,0,0,0.04)}
+  .faq .item h4{margin:0;cursor:pointer}
+  .faq .item p{display:none;margin-top:8px;color:var(--muted)}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1fr 380px;gap:28px;max-width:var(--max);margin:0 auto}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+  .contact-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.06)}
+
+  input,textarea,select{width:100%;padding:12px;border-radius:8px;border:1px solid #eaeaea;margin-bottom:12px;font-size:14px}
+
+  /* FOOTER */
+  footer{background:linear-gradient(90deg,var(--green),#084d17);color:#fff;padding:40px 4%;text-align:center;margin-top:40px}
+
+  /* FLOATING ACTIONS */
+  .float-actions{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:100}
+  .float-btn{width:56px;height:56px;border-radius:999px;display:grid;place-items:center;color:#fff;text-decoration:none;box-shadow:0 10px 30px rgba(11,20,15,0.14)}
+  .float-btn.whatsapp{background:linear-gradient(180deg,#25D366,#128C7E)}
+  .float-btn.call{background:var(--orange)}
+
+  /* MODAL GALLERY */
+  .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;padding:18px;z-index:200}
+  .modal{background:#fff;border-radius:12px;max-width:980px;width:100%;padding:18px;max-height:92vh;overflow:auto;box-shadow:0 30px 60px rgba(11,20,15,0.3)}
+  .modal .modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .modal .gallery{display:grid;grid-template-columns:1fr 280px;gap:12px;margin-top:12px}
+  @media(max-width:820px){.modal .gallery{grid-template-columns:1fr}}
+  .thumbs{display:flex;flex-direction:column;gap:8px}
+  .thumbs img{width:100%;height:80px;object-fit:cover;border-radius:8px;cursor:pointer}
+  .modal-main{height:420px;object-fit:cover;border-radius:8px;width:100%}
+  .modal .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent-grad);color:#fff;font-weight:700;margin-top:12px}
+
+  /* small utilities */
+  .muted{color:var(--muted);font-size:14px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:720px){.grid-2{grid-template-columns:1fr}}
+  .small{font-size:13px}
+  button.btn-ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px 12px;border-radius:8px}
+  :focus{outline:3px solid rgba(10,126,35,0.12);outline-offset:2px}
+
+  /* --- MOBILE RESPONSIVE FIXES --- */
+
+/* Fix header layout */
+@media(max-width:820px){
+  nav.main { display:none; }
+  .menu-toggle { display:block; }
+}
+
+/* Mobile spacing fix for hero */
+@media(max-width:650px){
+  .hero{
+    padding:40px 4% 28px;
+    min-height:60vh;
+  }
+  .hero .inner{
+    padding:24px;
+  }
+  .hero h1{
+    font-size:26px;
+  }
+}
+
+/* Fix about section */
+@media(max-width:600px){
+  .about-grid{
+    gap:20px;
+  }
+  .about-card{
+    padding:18px;
+  }
+}
+
+/* Masonry card responsiveness fix */
+@media(max-width:480px){
+  .service-card .meta{
+    padding:12px;
+  }
+  .service-card h3{ font-size:16px; }
+  .service-card p{ font-size:13px; }
+  .service-image{ height:180px; }
+}
+
+/* Portfolio images */
+@media(max-width:540px){
+  .portfolio-grid figure img{
+    height:240px;
+    object-fit:cover;
+  }
+}
+
+/* Testimonials spacing */
+@media(max-width:540px){
+  .testimonials > div{
+    padding:14px;
+  }
+}
+
+/* Team grid spacing */
+@media(max-width:500px){
+  .team-grid > div{
+    padding:10px;
+  }
+}
+
+/* Contact layout fix */
+@media(max-width:450px){
+  .contact-card{
+    padding:14px;
+  }
+  input,textarea,select{
+    padding:10px;
+  }
+}
+
+/* Modal responsive improvements */
+@media(max-width:720px){
+  .modal{
+    padding:14px;
+  }
+  .modal-main{
+    height:260px;
+  }
+  .thumbs img{
+    height:60px;
+  }
+}
+
+/* Reduce padding on all sections for small devices */
+@media(max-width:480px){
+  section{
+    padding:40px 4%;
+  }
+  .section-header h2{
+    font-size:22px;
+  }
+  .section-header p{
+    font-size:14px;
+  }
+}
+
+/* Floating buttons size */
+@media(max-width:450px){
+  .float-btn{
+    width:48px;
+    height:48px;
+  }
+  .float-btn i{
+    font-size:16px !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav container" role="navigation" aria-label="Main navigation">
+      <div class="brand" aria-hidden="false">
+        <div class="logo">ARCHIVE</div>
+        <small class="muted">Architecture & Interiors</small>
+      </div>
+
+      <nav class="main" aria-label="Primary">
+        <ul id="primaryNav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:8px">
+        <a class="cta" href="#contact">Book Consultation</a>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <i class="fa-solid fa-bars" style="font-size:16px"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- mobile overlay -->
+    <div class="overlay-nav" id="overlayNav" tabindex="-1"></div>
+    <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <a href="#home" onclick="closeMobileNav()">Home</a>
+      <a href="#services" onclick="closeMobileNav()">Services</a>
+      <a href="#projects" onclick="closeMobileNav()">Projects</a>
+      <a href="#about" onclick="closeMobileNav()">About</a>
+      <a href="#contact" onclick="closeMobileNav()" class="cta" style="display:inline-block;margin-top:8px">Book Consultation</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main id="main">
+    <section id="home" class="hero" aria-label="Intro">
+      <div class="inner container" data-aos="fade-up">
+        <h1>Design that feels like home — crafted with purpose.</h1>
+        <p class="muted">ARCHIVE blends architecture and interiors to create warm, functional, and beautiful spaces for living, work and hospitality.</p>
+        <div class="actions" style="margin-top:18px;">
+          <a class="btn" href="#services" style="background:var(--green);color:#fff;padding:12px 18px;border-radius:10px;font-weight:700">Explore Services</a>
+          <a class="btn" href="#projects" style="background:transparent;border:2px solid rgba(0,0,0,0.06);color:#222;padding:12px 18px;border-radius:10px">View Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="aboutHeading">
+      <div class="section-header">
+        <h2 id="aboutHeading">About ARCHIVE</h2>
+        <p>We are a multi-disciplinary studio focused on design, sustainability and high-quality executions. From full-home interiors to complex architectural projects, we manage concept to completion.</p>
+      </div>
+
+      <div class="about-grid container" data-aos="fade-up">
+        <div class="about-card">
+          <h3 style="color:var(--green);margin-top:0">Human-centered design</h3>
+          <p class="muted">Every project starts with listening. We understand lifestyle, movement and light to deliver practical and refined solutions.</p>
+
+          <div style="margin-top:18px" class="grid-2">
+            <div class="kpi" style="background:#fff;padding:12px;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.04)"><h4 style="color:var(--orange);margin:0">500+</h4><div class="muted small">Projects</div></div>
+            <div class="kpi" style="background:#fff;padding:12px;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.04)"><h4 style="color:var(--orange);margin:0">10+</h4><div class="muted small">Years Experience</div></div>
+          </div>
+        </div>
+
+        <aside aria-hidden="false"><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=700&q=80" alt="ARCHIVE studio interior" style="border-radius:12px;box-shadow:0 30px 60px rgba(11,20,15,0.06)" loading="lazy"></aside>
+      </div>
+    </section>
+
+    <!-- SERVICES (MASONRY) -->
+    <section id="services" aria-labelledby="servicesHeading">
+      <div class="section-header">
+        <h2 id="servicesHeading">Services — Premium Offerings</h2>
+        <p>Click any tile to open a detailed modal with an image gallery and service deliverables.</p>
+      </div>
+
+      <div class="masonry" id="masonry" data-aos="fade-up" aria-live="polite"></div>
+    </section>
+
+    <!-- PORTFOLIO / PROJECTS -->
+    <section id="projects" aria-labelledby="projectsHeading">
+      <div class="section-header">
+        <h2 id="projectsHeading">Selected Projects</h2>
+        <p>Representative work across residential, hospitality and retail.</p>
+      </div>
+      <div class="portfolio-grid container" data-aos="fade-up">
+        <figure><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80" alt="Modern Family Home" loading="lazy"><figcaption class="muted">Modern Family Home</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" alt="Minimal Office Fitout" loading="lazy"><figcaption class="muted">Minimal Office Fitout</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1578894380550-4f0fb9abe2b6?auto=format&fit=crop&w=1200&q=80" alt="Boutique Cafe" loading="lazy"><figcaption class="muted">Boutique Cafe</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" aria-labelledby="testiHeading">
+      <div class="section-header">
+        <h2 id="testiHeading">What Clients Say</h2>
+        <p>Stories from our clients about design, delivery and outcomes.</p>
+      </div>
+      <div class="testimonials container" data-aos="fade-up">
+        <div style="background:#fff;padding:18px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.06)"><p>“They turned our apartment into a calm, functional home.”</p><strong style="color:var(--green)">— Asha R.</strong></div>
+        <div style="background:#fff;padding:18px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.06)"><p>“Excellent coordination and on-time delivery.”</p><strong style="color:var(--green)">— Vivek S.</strong></div>
+        <div style="background:#fff;padding:18px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.06)"><p>“Premium finishes and brilliant ideas — recommended.”</p><strong style="color:var(--green)">— Priya M.</strong></div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" aria-labelledby="teamHeading">
+      <div class="section-header"><h2 id="teamHeading">Our Team</h2><p>Experienced design professionals across architecture and interiors.</p></div>
+      <div class="team-grid container" data-aos="fade-up">
+        <div style="background:#fff;padding:12px;border-radius:12px;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,0.06)"><img src="https://images.unsplash.com/photo-1545996124-1b8b2fddc5b2?auto=format&fit=crop&w=600&q=80" alt="Rakesh Kumar" style="height:180px;object-fit:cover;border-radius:8px" loading="lazy"><h4>Rakesh Kumar</h4><div class="muted">Lead Designer</div></div>
+        <div style="background:#fff;padding:12px;border-radius:12px;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,0.06)"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Neha Gupta" style="height:180px;object-fit:cover;border-radius:8px" loading="lazy"><h4>Neha Gupta</h4><div class="muted">Architect</div></div>
+        <div style="background:#fff;padding:12px;border-radius:12px;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,0.06)"><img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=600&q=80" alt="Vishal Singh" style="height:180px;object-fit:cover;border-radius:8px" loading="lazy"><h4>Vishal Singh</h4><div class="muted">3D Visualizer</div></div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" aria-labelledby="processHeading">
+      <div class="section-header"><h2 id="processHeading">How We Work</h2><p>Clear process, defined timelines, transparent deliverables.</p></div>
+      <div class="process container" data-aos="fade-up" role="list">
+        <div role="listitem" style="background:#fff;padding:18px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.06)"><strong>1</strong><div class="muted">Consultation</div></div>
+        <div role="listitem" style="background:#fff;padding:18px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.06)"><strong>2</strong><div class="muted">Design & Approval</div></div>
+        <div role="listitem" style="background:#fff;padding:18px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.06)"><strong>3</strong><div class="muted">Procurement</div></div>
+        <div role="listitem" style="background:#fff;padding:18px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.06)"><strong>4</strong><div class="muted">Execution & Handover</div></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faqHeading">
+      <div class="section-header"><h2 id="faqHeading">FAQ</h2><p>Quick answers.</p></div>
+      <div class="container faq" data-aos="fade-up">
+        <div class="item"><h4 tabindex="0">How long does a project take?</h4><p>Small: 3–6 weeks. Medium: 8–16 weeks. Complex: 16+ weeks.</p></div>
+        <div class="item"><h4 tabindex="0">Do you handle approvals?</h4><p>Yes — we prepare working drawings and coordinate for approvals when required.</p></div>
+        <div class="item"><h4 tabindex="0">Do you provide 3D renders?</h4><p>Yes — we produce photoreal renders and walkthroughs for client approvals.</p></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contactHeading">
+      <div class="section-header"><h2 id="contactHeading">Get in Touch</h2><p>Tell us about your project — we reply within 48 hours on weekdays.</p></div>
+      <div class="contact-grid container" data-aos="fade-up">
+        <form class="contact-card" onsubmit="submitForm(event)" aria-label="Contact form" novalidate>
+          <label class="small" for="cname">Your name</label>
+          <input id="cname" placeholder="Your name" required>
+          <label class="small" for="cphone">Phone</label>
+          <input id="cphone" placeholder="Phone" required>
+          <label class="small" for="cemail">Email</label>
+          <input id="cemail" type="email" placeholder="Email" required>
+          <label class="small" for="cservice">Service</label>
+          <select id="cservice"><option>Interested in...</option><option>Interior Design</option><option>Architecture</option><option>3D Visualization</option></select>
+          <label class="small" for="cmessage">Message</label>
+          <textarea id="cmessage" rows="5" placeholder="Tell us about your project" required></textarea>
+          <button type="submit" style="background:var(--orange);color:#fff;border:0;padding:12px;border-radius:8px;font-weight:700">Send Inquiry</button>
+        </form>
+
+        <aside class="contact-card" aria-label="Studio details">
+          <h4 style="margin-top:0;color:var(--green)">Studio Details</h4>
+          <p class="muted">ARCHIVE Studio • Bengal, India</p>
+          <p style="margin:12px 0">📞 <a href="tel:+918013150623" style="color:var(--green)">+91 8013150623</a><br>📧 <a href="mailto:info@archive.studio">info@archive.studio</a></p>
+          <div style="margin-top:12px"><a href="https://wa.me/918013150623" class="btn" style="background:var(--green);color:#fff;padding:10px 12px;border-radius:8px">Message on WhatsApp</a></div>
+          <p class="muted small" style="margin-top:12px">Studio open Mon–Fri, 9:30am–6:30pm</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div style="max-width:900px;margin:0 auto">
+        <p style="margin:0 0 8px">© 2025 ARCHIVE — Architecture & Interior Design</p>
+        <p class="muted" style="margin:0">Made with Windforce Digital • Premium interiors & architectural planning</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING ACTIONS -->
+  <div class="float-actions" aria-hidden="false">
+    <a class="float-btn whatsapp" id="waBtn" title="Chat on WhatsApp" href="https://wa.me/918013150623?text=Hi%20ARCHIVE%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" style="font-size:20px;color:#fff"></i></a>
+    <a class="float-btn call" href="tel:+918013150623" title="Call us"><i class="fa-solid fa-phone" style="font-size:16px;color:#fff"></i></a>
+  </div>
+
+  <!-- SERVICE MODAL (single overlay used for all) -->
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document" id="modalCard" aria-labelledby="modalTitle">
+      <div class="modal-head" style="display:flex;gap:12px;align-items:center;justify-content:space-between">
+        <div>
+          <h3 id="modalTitle" style="margin:0;color:var(--green)"></h3>
+          <p id="modalTag" class="muted small" style="margin:6px 0 0"></p>
+        </div>
+        <div><button aria-label="Close" id="modalClose" style="background:none;border:0;font-size:26px;cursor:pointer;color:var(--orange)">×</button></div>
+      </div>
+
+      <div class="gallery">
+        <div>
+          <img id="modalMain" class="modal-main" src="" alt="service image">
+        </div>
+        <aside class="thumbs" id="modalThumbs" aria-hidden="false">
+          <!-- thumbs injected -->
+        </aside>
+      </div>
+
+      <div style="margin-top:12px">
+        <p id="modalDesc" class="muted"></p>
+        <h4 style="margin-top:12px;color:var(--green)">What we deliver</h4>
+        <ul id="modalDeliver" class="muted"></ul>
+        <div style="margin-top:10px">
+          <a id="modalContact" class="btn" href="#contact" style="background:var(--accent-grad);color:#fff;padding:10px 14px;border-radius:8px">Request this service</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({duration:600,once:true});
+
+// ======= SERVICES DATA (10) =======
+const SERVICES = [
+  {
+    id: 's1',
+    title: 'Residential Interior',
+    tag: 'Complete home interiors: kitchen, bedroom, living',
+    images: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1600585154353-8f3b9c7d8f1a?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80'
+    ],
+    desc: 'Tailored residential interiors with focus on layout, finishes and furniture. We provide moodboards, FF&E lists and turnkey delivery.',
+    deliver: ['Concept & moodboards','Space planning & furniture layouts','Material & finish selection','Lighting design','Turnkey installation']
+  },
+  {
+    id: 's2',
+    title: 'Commercial Interiors',
+    tag: 'Offices, retail & hospitality fitouts',
+    images: [
+      'https://images.unsplash.com/photo-1505691723518-34a2b7f4f0ca?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1549187774-b4e9b0445b38?auto=format&fit=crop&w=1200&q=80'
+    ],
+    desc: 'Designing efficient, branded workspaces and retail stores with attention to ergonomics and brand identity.',
+    deliver: ['Workspace planning','Brand integration','Acoustics & lighting','Procurement & installation']
+  },
+  {
+    id: 's3',
+    title: 'Modular Kitchens',
+    tag: 'Ergonomic kitchens — modern & durable',
+    images: [
+      'https://images.unsplash.com/photo-1604908177133-9b6d2b4b9b9f?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1542826650-8fc18b7b5f44?auto=format&fit=crop&w=1200&q=80'
+    ],
+    desc: 'Custom modular kitchens designed for function and longevity — detailed elevations and cabinetshop drawings included.',
+    deliver: ['Kitchen layouts','Cabinet shop drawings','Hardware selection','Appliance coordination']
+  },
+  {
+    id: 's4',
+    title: 'False Ceiling Design',
+    tag: 'Feature ceilings, integrated lighting',
+    images: [
+      'https://images.unsplash.com/photo-1582582422812-1a31e4d7e2a2?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1560448077-7f74f5b8b2b1?auto=format&fit=crop&w=1200&q=80'
+    ],
+    desc: 'Creative false ceiling solutions for mood, acoustics and integrated lighting.',
+    deliver: ['POP/Gypsum detailing','Lighting coordination','Duct & service integration','Installation supervision']
+  },
+  {
+    id: 's5',
+    title: 'Flooring & Tiles',
+    tag: 'Premium finishes: wood, stone & tiles',
+    images: [
+      'https://images.unsplash.com/photo-1549187774-b4e9b0445b38?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1567016521967-6d9f2d0d7f2c?auto=format&fit=crop&w=1200&q=80'
+    ],
+    desc: 'Selection and detailing of high-quality flooring solutions suitable for each space and budget.',
+    deliver: ['Sample selection','Laying patterns','Material durability studies','Finish approvals']
+  },
+  {
+    id: 's6',
+    title: '3D Visualization',
+    tag: 'Photoreal renders & walkthroughs',
+    images: [
+      'https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1505691723518-34a2b7f4f0ca?auto=format&fit=crop&w=1200&q=80'
+    ],
+    desc: 'High-quality 3D renders and animated walkthroughs to preview your space accurately before execution.',
+    deliver: ['Still renders','Walkthrough animations','Material & lighting simulation','VR previews']
+  },
+  {
+    id: 's7',
+    title: 'Architectural Planning',
+    tag: 'Site-responsive architecture & approvals',
+    images: [
+      'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1505691723518-34a2b7f4f0ca?auto=format&fit=crop&w=1200&q=80'
+    ],
+    desc: 'Schematic design, working drawings, elevations, and municipal approvals for new builds and additions.',
+    deliver: ['Site analysis','Schematic & working drawings','Structure coordination','Permit support']
+  },
+  {
+    id: 's8',
+    title: 'Renovation & Remodeling',
+    tag: 'Upgrade & retrofit with minimal disruption',
+    images: [
+      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80'
+    ],
+    desc: 'Planned renovation services to refresh existing spaces with improved performance and aesthetics.',
+    deliver: ['Condition survey','Phased delivery plan','Budgeting & works','Quality checks']
+  },
+  {
+    id: 's9',
+    title: 'Custom Furniture',
+    tag: 'Bespoke furniture & joinery',
+    images: [
+      'https://images.unsplash.com/photo-1550583724-b2690f9f5a74?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1530018607919-913b3c281d3e?auto=format&fit=crop&w=1200&q=80'
+    ],
+    desc: 'Custom furniture design and fabrication tailored to your space and material choices.',
+    deliver: ['Concept sketches','Detail drawings','Prototyping','Installation & finishing']
+  },
+  {
+    id: 's10',
+    title: 'Landscape Design',
+    tag: 'Gardens, terraces & outdoor living',
+    images: [
+      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80'
+    ],
+    desc: 'Thoughtful landscape and outdoor solutions focused on climate-appropriate planting and comfortable outdoor living.',
+    deliver: ['Planting plans','Hardscape detailing','Irrigation solutions','Outdoor lighting']
+  }
+];
+
+// ====== Inject Masonry cards ======
+const masonry = document.getElementById('masonry');
+SERVICES.forEach((s, idx) => {
+  const card = document.createElement('article');
+  card.className = 'service-card';
+  card.innerHTML = `
+    <img class="service-image" src="${s.images[0]}" alt="${s.title}" loading="lazy">
+    <div class="meta">
+      <h3>${s.title}</h3>
+      <p class="muted">${s.tag}</p>
+      <p style="margin-top:10px"><button class="btn-ghost" aria-haspopup="dialog" aria-controls="modalBackdrop" style="background:var(--green);color:#fff;padding:8px 12px;border-radius:8px;border:0;cursor:pointer" onclick="openServiceModal('${s.id}')">Learn more</button></p>
+    </div>
+  `;
+  masonry.appendChild(card);
+});
+
+// ====== Modal handling ======
+const modalBackdrop = document.getElementById('modalBackdrop');
+const modalTitle = document.getElementById('modalTitle');
+const modalTag = document.getElementById('modalTag');
+const modalMain = document.getElementById('modalMain');
+const modalThumbs = document.getElementById('modalThumbs');
+const modalDesc = document.getElementById('modalDesc');
+const modalDeliver = document.getElementById('modalDeliver');
+const modalContact = document.getElementById('modalContact');
+const modalCloseBtn = document.getElementById('modalClose');
+
+function openServiceModal(id){
+  const service = SERVICES.find(x => x.id === id);
+  if(!service) return;
+  modalTitle.textContent = service.title;
+  modalTag.textContent = service.tag;
+  modalMain.src = service.images[0];
+  modalMain.alt = service.title;
+  modalDesc.textContent = service.desc;
+  modalDeliver.innerHTML = '';
+  service.deliver.forEach(d => {
+    const li = document.createElement('li');
+    li.textContent = d;
+    modalDeliver.appendChild(li);
+  });
+  // thumbs
+  modalThumbs.innerHTML = '';
+  service.images.forEach((img, i) => {
+    const t = document.createElement('img');
+    t.src = img;
+    t.alt = service.title + ' ' + (i+1);
+    t.loading = 'lazy';
+    t.addEventListener('click',()=>{ modalMain.src = img; modalMain.focus(); });
+    modalThumbs.appendChild(t);
+  });
+
+  modalContact.href = '#contact';
+  modalBackdrop.style.display = 'flex';
+  modalBackdrop.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+  modalCloseBtn.focus();
+}
+
+function closeModal(){
+  modalBackdrop.style.display = 'none';
+  modalBackdrop.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+  modalMain.src = '';
+}
+
+// Close on backdrop click
+modalBackdrop.addEventListener('click', (e) => { if(e.target === modalBackdrop) closeModal(); });
+modalCloseBtn.addEventListener('click', closeModal);
+document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+
+// ====== FAQ accordion ======
+document.querySelectorAll('.faq .item h4').forEach(h => {
+  h.addEventListener('click', ()=> toggleFAQ(h));
+  h.addEventListener('keydown', (e)=> { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleFAQ(h); }});
+});
+function toggleFAQ(h){
+  const p = h.nextElementSibling;
+  const opened = p.style.display === 'block';
+  document.querySelectorAll('.faq .item p').forEach(x=>x.style.display='none');
+  p.style.display = opened ? 'none' : 'block';
+}
+
+// ====== Contact form (demo) ======
+function submitForm(e){
+  e.preventDefault();
+  const name = document.getElementById('cname').value.trim();
+  const email = document.getElementById('cemail').value.trim();
+  const phone = document.getElementById('cphone').value.trim();
+  const msg = document.getElementById('cmessage').value.trim();
+  if(!name || !email || !phone || !msg){ alert('Please fill all required fields'); return; }
+  // In production, hook this to your backend or form service (Netlify Forms, Formspree, etc.)
+  alert('Thanks '+name+'! We received your inquiry. We will contact you soon.');
+  document.querySelector('form').reset();
+  location.hash = '#contact';
+}
+
+// ====== Mobile nav toggle ======
+const menuToggle = document.getElementById('menuToggle');
+const mobileNav = document.getElementById('mobileNav');
+const overlayNav = document.getElementById('overlayNav');
+
+menuToggle.addEventListener('click', () => {
+  const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  if(expanded){ closeMobileNav(); } else { openMobileNav(); }
+});
+overlayNav.addEventListener('click', closeMobileNav);
+function openMobileNav(){
+  mobileNav.style.display = 'block';
+  overlayNav.style.display = 'block';
+  menuToggle.setAttribute('aria-expanded','true');
+  mobileNav.setAttribute('aria-hidden','false');
+  menuToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+}
+function closeMobileNav(){
+  mobileNav.style.display = 'none';
+  overlayNav.style.display = 'none';
+  menuToggle.setAttribute('aria-expanded','false');
+  mobileNav.setAttribute('aria-hidden','true');
+  menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+}
+
+// Accessibility: close modal / mobile nav on Escape globally
+document.addEventListener('keydown', (e)=> {
+  if(e.key === 'Escape'){
+    closeModal();
+    closeMobileNav();
+  }
+});
+
+// Ensure focus trap-ish behavior with modal open (basic)
+modalBackdrop.addEventListener('keydown', (e)=>{
+  if(e.key === 'Tab'){
+    // allow tab normally (simple approach). For stricter trap, add more logic.
+  }
+});
+
+</script>
+<noscript>
+  <style>
+    [data-aos]{opacity:1;transform:none !important}
+  </style>
+  <div style="background:#fff;padding:8px;text-align:center">For the best experience enable JavaScript.</div>
+</noscript>
+</body>
+</html>
